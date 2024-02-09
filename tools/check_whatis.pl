@@ -15,10 +15,11 @@
 #!/usr/bin/perl -w
 use strict;
 use warnings;
+use File::HomeDir;
 
-my $error_file = "/home/chrisdavidson/manpages/output/broken_error_file.txt";
-my $whatis_file = "/home/chrisdavidson/manpages/output/whatis_results.txt";
-my $error_whatis_file = "/home/chrisdavidson/manpages/output/error_whatis.txt";
+my $error_file = File::HomeDir::home() . "/manpages/output/broken_error_file.txt";
+my $whatis_file = File::HomeDir::home() . "/manpages/output/whatis_results.txt";
+my $error_whatis_file = File::HomeDir::home() . "/manpages/output/error_whatis.txt";
 
 my @output_files = qw ($whatis_file $error_whatis_file);
 

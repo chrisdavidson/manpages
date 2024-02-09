@@ -17,9 +17,9 @@ use strict;
 use warnings;
 use File::HomeDir;
 
-
 #Global Variable space
-my $broken_refs_file = "/home/chrisdavidson/manpages/output/broken_refs.txt";
+my $broken_refs_file = File::HomeDir::home() . "/manpages/output/broken_refs.txt";
+my $broken_base_file = File::HomeDir::home() . "/manpages/output/broken_base.txt";
 
 #main program loop
 &realign_broken_refs();
@@ -35,7 +35,7 @@ sub realign_broken_refs() {
   while (<$fh>) {
     my @split_line = split(" ", $_);
     foreach my $entry (@split_line) {
-      print $entry->[0];
+      print $entry . " length: " . length($entry) . "\n";
     }
   }
 }

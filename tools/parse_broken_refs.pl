@@ -17,15 +17,16 @@ use strict;
 use warnings;
 use File::Find;
 use File::Copy;
+use File::HomeDir;
 
-my $base_file = "/home/chrisdavidson/manpages/output/broken_base.txt";
-my $ref_file = "/home/chrisdavidson/manpages/input/broken_refs.txt";
-my $contrib_file = "/home/chrisdavidson/manpages/output/broken_contrib.txt";
-my $error_file = "/home/chrisdavidson/manpages/output/broken_error_file.txt";
-my $temp_file = "/home/chrisdavidson/manpages/output/temporarytxt";
+my $base_file = File::HomeDir::home() . "/manpages/output/broken_base.txt";
+my $ref_file = File::HomeDir::home() . "/manpages/input/broken_refs.txt";
+my $contrib_file = File::HomeDir::home() . "/manpages/output/broken_contrib.txt";
+my $error_file = File::HomeDir::home() . "/manpages/output/broken_error_file.txt";
+my $temp_file = File::HomeDir::home() . "/manpages/output/temporarytxt";
 my @output_files = qw ($base_file $contrib_file $error_file $temp_file);
 
-my $directory = "/usr/src";
+my $directory = File::HomeDir::home() . "/src/manuals";
 my %manpages;
 
 &clear_old_files();
@@ -39,7 +40,7 @@ find({
 sub process_refs_file() {
   open(my $fh, '<', $ref_file) or die $!;
 
-  while (<fh>) {
+  while (<$fh>) {
     my @split_line = split(/ /, $_);
     foreach my $item (@split_line) {
       if ($item =~ /gz$/) {
@@ -58,29 +59,29 @@ sub process_refs_file() {
       }
     }
   }
-  close(fh);
+  close($fh);
 }
 
 sub create_contrib_file() {
   my $key = shift;
   my $value = shift;
   open(my $cfh, '>>', $contrib_file) or die $!;
-  print cfh $key . " " . $value . "\n";
-  close(cfh);
+  print $cfh $key . " " . $value . "\n";
+  close($cfh);
 }
 
 sub create_base_file() {
   my $key = shift;
   my $value = shift;
   open(my $bfh, '>>', $base_file) or die $!;
-  print bfh $key . " " . $value . "\n";
+  print $bfh $key . " " . $value . "\n";
 }
 
 sub create_error_file() {
   my $entry = shift;
   open(my $efh, '>>', $error_file) or die $!;
-  print efh $entry . "\n";
-  close(efh);
+  print $efh $entry . "\n";
+  close($efh);
 }
 
 sub search_processed_files() {
