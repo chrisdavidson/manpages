@@ -46,6 +46,7 @@ sub process_refs_file() {
 
   while (<$fh>) {
     my @split_line = split(/ /, $_);
+
     foreach my $item (@split_line) {
       if ($item =~ /gz$/) {
         $item =~ s/\s+$//g;
