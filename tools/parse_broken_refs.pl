@@ -19,24 +19,28 @@ use File::Find;
 use File::Copy;
 use File::HomeDir;
 
+#main set of files, these are first pass creation
 my $base_file = File::HomeDir::home() . "/manpages/output/broken_base.txt";
 my $ref_file = File::HomeDir::home() . "/manpages/input/broken_refs.txt";
 my $contrib_file = File::HomeDir::home() . "/manpages/output/broken_contrib.txt";
 my $error_file = File::HomeDir::home() . "/manpages/output/broken_error_file.txt";
-my $temp_file = File::HomeDir::home() . "/manpages/output/temporarytxt";
-my @output_files = qw ($base_file $contrib_file $error_file $temp_file);
+my @output_files = qw ($base_file $contrib_file $error_file);
 
 my $directory = File::HomeDir::home() . "/src/manuals";
 my %manpages;
 
 &clear_old_files();
 
+#we are going to find all the files we care about for this processing
 find({
     wanted => \&process_files 
   }, $directory);
 
 &process_refs_file();
+&dedup_contrib_file();
+&dedup_base_file();
 
+#This is the main function that does the heavy lifting of parsing files and splitting up
 sub process_refs_file() {
   open(my $fh, '<', $ref_file) or die $!;
 
@@ -62,6 +66,7 @@ sub process_refs_file() {
   close($fh);
 }
 
+#this is a helper function to create entries in the "contrib" area
 sub create_contrib_file() {
   my $key = shift;
   my $value = shift;
@@ -70,6 +75,21 @@ sub create_contrib_file() {
   close($cfh);
 }
 
+#There is a good chance we have duplicate rows in the contrib file
+#lets get rid of them to reduce the noise in the files
+sub dedup_contrib_file() {
+  my %seen = ();
+
+  local @ARGV = ($contrib_file);
+  local $^I = '.bac';
+  while(<>) {
+    $seen{$_}++;
+    next if $seen{$_} > 1;
+    print;
+  }
+}
+
+#this is a helper function to create entries in the "base" area
 sub create_base_file() {
   my $key = shift;
   my $value = shift;
@@ -77,6 +97,19 @@ sub create_base_file() {
   print $bfh $key . " " . $value . "\n";
 }
 
+sub dedup_base_file() {
+  my %seen = ();
+
+  local @ARGV = ($base_file);
+  local $^I = '.bac';
+  while(<>) {
+    $seen{$_}++;
+    next if $seen{$_} > 1;
+    print;
+  }
+}
+
+#this is a helper function to create error entries from processing
 sub create_error_file() {
   my $entry = shift;
   open(my $efh, '>>', $error_file) or die $!;
