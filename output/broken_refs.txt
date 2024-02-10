@@ -258,7 +258,7 @@ krb5_rd_priv(3)  krb5_auth_con_setrcache.3.gz krb5_auth_con_setkey.3.gz krb5_aut
 krb5_rd_req(3)  krb5.conf.5.gz
 krb5_send_to_kdc_flags(3)  krb5_krbhst_get_addrinfo.3.gz krb5_krbhst_next_as_string.3.gz krb5_krbhst_free.3.gz krb5_krbhst_init.3.gz krb5_krbhst_next.3.gz krb5_krbhst_format_string.3.gz krb5_krbhst_reset.3.gz
 krb_realmofhost(3)  telnet.1.gz
-ksh(1)  make.conf.5.gz
+ksh(1)  debug.sh.8.gz make.conf.5.gz
 ksu(1)  security.7.gz securelevel.7.gz
 launchd(8)  audit.8.gz auditd.8.gz
 lb(8)  netmap.4.gz
@@ -280,7 +280,7 @@ lz4(1)  archive.3.gz libarchive.3.gz
 lzip(1)  archive.3.gz libarchive.3.gz
 lzma(3)  mkuzip.8.gz
 lzop(1)  bsdtar.1.gz cpio.1.gz bsdcpio.1.gz tar.1.gz archive.3.gz libarchive.3.gz
-mac_veriexec(4)  sh.1.gz src-env.conf.5.gz src.conf.5.gz
+mac_veriexec(4)  sh.1.gz rc.subr.8.gz src-env.conf.5.gz src.conf.5.gz
 machine(1)  whatis.1.gz apropos.1.gz
 mailaddr(7)  sendmail.8.gz purgestat.8.gz dma.8.gz hoststat.8.gz dma.conf.5.gz
 makewhatis(1)  makewhatis.local.8.gz src-env.conf.5.gz src.conf.5.gz
@@ -512,7 +512,7 @@ uucico(8)  cu.1.gz tip.1.gz
 uucp(1)  b64decode.1.gz login.1.gz uuencode.1.gz bintrans.1.gz cu.1.gz tip.1.gz uudecode.1.gz b64encode.1.gz base64.1.gz rmail.8.gz uuencode.5.gz uuencode.format.5.gz
 uucpd(8)  inetd.8.gz inetd.conf.5.gz
 vdev_id(8)  zpoolprops.7.gz
-veriexec(8)  src-env.conf.5.gz src.conf.5.gz
+veriexec(8)  rc.subr.8.gz src-env.conf.5.gz src.conf.5.gz
 verify(1)  fetchListURL.3.gz fetchGet.3.gz fetchList.3.gz fetchStatHTTP.3.gz fetchReqHTTP.3.gz fetchGetHTTP.3.gz fetchPutFTP.3.gz fetchGetURL.3.gz fetchStatURL.3.gz fetchListHTTP.3.gz fetchFreeURL.3.gz fetchPutHTTP.3.gz fetchXGet.3.gz fetchXGetFTP.3.gz fetchXGetHTTP.3.gz fetchStatFile.3.gz fetch.3.gz fetchXGetURL.3.gz fetchStatFTP.3.gz fetchPut.3.gz fetchGetFile.3.gz fetchMakeURL.3.gz fetchStat.3.gz fetchPutURL.3.gz fetchGetFTP.3.gz fetchParseURL.3.gz fetchXGetFile.3.gz fetchPutFile.3.gz fetchListFile.3.gz fetchListFTP.3.gz
 vfwprintf_l(3)  xlocale.3.gz
 vfwscanf_l(3)  xlocale.3.gz
