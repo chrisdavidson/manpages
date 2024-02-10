@@ -1,0 +1,6 @@
+/etc/rc.conf(5)  if_lagg.4.gz lagg.4.gz trunk.4.gz
+<fillmein>(9)  bp.9.gz buf.9.gz
+SIZE(1)  kcov.4.gz
+SIZE(2)  kcov.4.gz
+SIZE(3)  kcov.4.gz
+monitor(3)  gprof.1.gz
