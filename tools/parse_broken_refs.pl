@@ -70,8 +70,10 @@ sub process_refs_file() {
 sub create_contrib_file() {
   my $key = shift;
   my $value = shift;
+
   open(my $cfh, '>>', $contrib_file) or die $!;
   print $cfh $key . " " . $value . "\n";
+
   close($cfh);
 }
 
@@ -82,6 +84,7 @@ sub dedup_contrib_file() {
 
   local @ARGV = ($contrib_file);
   local $^I = '.bac';
+  
   while(<>) {
     $seen{$_}++;
     next if $seen{$_} > 1;
@@ -93,6 +96,7 @@ sub dedup_contrib_file() {
 sub create_base_file() {
   my $key = shift;
   my $value = shift;
+  
   open(my $bfh, '>>', $base_file) or die $!;
   print $bfh $key . " " . $value . "\n";
 }
@@ -102,6 +106,7 @@ sub dedup_base_file() {
 
   local @ARGV = ($base_file);
   local $^I = '.bac';
+
   while(<>) {
     $seen{$_}++;
     next if $seen{$_} > 1;
