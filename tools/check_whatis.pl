@@ -26,25 +26,27 @@ my @output_files = qw ($whatis_file $error_whatis_file);
 &clear_old_files();
 &iterate_error_file();
 &strip_emptylines();
+&dedup_whatis_results();
 
 sub iterate_error_file() {
   open(my $fh, '<', $error_file) or die $!;
 
   while (<$fh>) {
     my $manual_page = substr($_, 0, -3);
+    print "fetching details about: " . $manual_page . "\n";
     my $results = `man -f $manual_page`;
     capture_results($manual_page, $results);
   }
-  close(fh);
+  close($fh);
 }
 
 sub capture_results() {
   my $manual_page = shift;
   my $entry = shift;
-
+  
   open(my $fh, '>>', $whatis_file) or die $!;
   print $fh $manual_page . ": " . $entry;
-  close(fh);
+  close($fh);
 }
 
 sub strip_emptylines() {
@@ -52,7 +54,20 @@ sub strip_emptylines() {
   
   while (<$fh>) {
     next if m/^\s+$/;
-    print $fh;
+  }
+  close($fh);
+}
+
+sub dedup_whatis_results() {
+  my %seen = ();
+
+  local @ARGV = ($whatis_file);
+  local $^I = '.bac';
+
+  while (<>) {
+    $seen{$_}++;
+    next if $seen{$_} > 1;
+    print;
   }
 }
 
