@@ -20,22 +20,83 @@ use File::HomeDir;
 #Global Variable space
 my $broken_refs_file = File::HomeDir::home() . "/manpages/output/broken_refs.txt";
 my $broken_base_file = File::HomeDir::home() . "/manpages/output/broken_base.txt";
+my $broken_contrib_file = File::HomeDir::home() . "/manpages/output/broken_contrib.txt";
 
+my $combined_base_file = File::HomeDir::home() . "/manpages/output/combined_base_refs.txt";
+my $combined_contrib_file = File::HomeDir::home() . "/manpages/output/combined_contrib_refs.txt";
+
+my @output_files = qw ($combined_based_file $combined_contrib_file); 
+
+#We want to make sure we do not have previous runs of this script
+&clear_old_files();
 #main program loop
-&realign_broken_refs();
+#combining the base file output with the initial refs
+&combine_refs_base();
+#combine the contrib file output with the initial refs
+&combine_refs_contrib();
 
 #We want to prepare the broken_refs file
 #Objective - To make each reference to bad link its own line
 #Input - ECT(1) tcpdump.1.gz cc_dctp.4.gz
 #Output - ECT(1) tcpdump.1.gz
 #         ECT(1) cc_dctp.4.gz
-sub realign_broken_refs() {
+sub combine_refs_base() {
   open(my $fh, '<', $broken_refs_file) or die $!;
+  open(my $ofh, '>>', $combined_base_file) or die $!;
 
   while (<$fh>) {
     my @split_line = split(" ", $_);
-    foreach my $entry (@split_line) {
-      print $entry . " length: " . length($entry) . "\n";
+    my $entry = substr($split_line[0], 0, -3);
+    my $wordstatus = findword($entry, $broken_base_file);
+    if ($wordstatus ne "0") {
+      print $ofh $split_line[0] . ":" . $wordstatus;
     }
+  }
+  close($ofh);
+  close($fh);
+}
+
+sub combine_refs_contrib() {
+  open(my $fh, '<', $broken_refs_file) or die $!;
+  open(my $ofh, '>>', $combined_contrib_file) or die $!;
+
+  while (<$fh>) {
+    my @split_line = split(" ", $_);
+    my $entry = substr($split_line[0], 0, -3);
+    my $wordstatus = findword($entry, $broken_contrib_file);
+    if ($wordstatus ne "0") {
+      print $ofh $split_line[0] . ":" . $wordstatus;
+    }
+  }
+  close($ofh);
+  close($fh);
+}
+
+#this is a helper function to make it "cleaner" to find terms
+#Pass arguments
+#<word> - the word we are looking for
+#<fhl> - the file to search for the results in
+#
+#Return
+# 1 - Found it
+# 0 - Did not Find It
+sub findword() {
+  my $word = shift;
+  my $fhl = shift;
+  open(my $fh, '<', $fhl) or die $!;
+
+  while (<$fh>) {
+    if (index($_, $word) > -1) {
+      close($fh);
+      return $_;
+    }
+  }
+  close($fh);
+  return(0);
+}
+
+sub clear_old_files() {
+  for my $f (@output_files) {
+    system "rm -rf $f";
   }
 }
