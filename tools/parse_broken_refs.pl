@@ -52,12 +52,14 @@ sub process_refs_file() {
         $item =~ s/\s+$//g;
         my $manual_page = substr($item, 0, -3);
         my ($key, $value) = search_processed_files($manual_page);
+        print "manpage: ". $item . " key: " . $key . "\n";
         if (length($key) == 0) {
           create_error_file($manual_page);
         } else {
           if ($value =~ '/contrib/') {
             create_contrib_file($key, $value);
           } else {
+            print "Value: " . $value . "\n";
             create_base_file($key, $value);
           }
         }
@@ -127,6 +129,7 @@ sub search_processed_files() {
   my $item = shift;
   for my ($key, $value) (%manpages) {
     if ($key eq $item) {
+      print "key: " . $key . " value: " . $value . "\n";
       return $key, $value;
     } 
   }
@@ -140,6 +143,7 @@ sub process_files() {
 
 sub clear_old_files() {
   for my $f (@output_files) {
+    print "Deleting: " . $f . "\n";
     system "rm -rf $f";
   }
 }

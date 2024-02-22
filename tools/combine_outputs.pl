@@ -49,6 +49,7 @@ sub combine_refs_base() {
     my $entry = substr($split_line[0], 0, -3);
     my $wordstatus = findword($entry, $broken_base_file);
     if ($wordstatus ne "0") {
+      print "split line zero: " . $split_line[0] . " entry: " . $entry . " line form file: " . $wordstatus;
       print $ofh $split_line[0] . ":" . $wordstatus;
     }
   }
@@ -85,8 +86,13 @@ sub findword() {
   my $fhl = shift;
   open(my $fh, '<', $fhl) or die $!;
 
-  while (<$fh>) {
-    if (index($_, $word) > -1) {
+  while (<$fh>) {
+    my @split_lines = split("/", $_);
+    #print "Split word is: " . $split_lines[-1] . " and length is: "  . length($split_lines[0-1]) . "\n";
+    #print "Word sent over is: " . $word . " and length is: " . length($word) . "\n";
+    if ($split_lines[-1] =~ $word) {
+      print "Split word is: " . $split_lines[-1] . " and length is: "  . length($split_lines[0-1]) . "\n";
+      print "Word sent over is: " . $word . " and length is: " . length($word) . "\n";
       close($fh);
       return $_;
     }
