@@ -24,12 +24,9 @@ my $base_file = File::HomeDir::home() . "/manpages/output/broken_base.txt";
 my $ref_file = File::HomeDir::home() . "/manpages/input/broken_refs.txt";
 my $contrib_file = File::HomeDir::home() . "/manpages/output/broken_contrib.txt";
 my $error_file = File::HomeDir::home() . "/manpages/output/broken_error_file.txt";
-my @output_files = qw ($base_file $contrib_file $error_file);
 
 my $directory = File::HomeDir::home() . "/src/manuals";
 my %manpages;
-
-&clear_old_files();
 
 #we are going to find all the files we care about for this processing
 find({
@@ -137,11 +134,3 @@ sub process_files() {
     $manpages{$_} = $File::Find::name;
   }
 }
-
-sub clear_old_files() {
-  for my $f (@output_files) {
-    print "Deleting: " . $f . "\n";
-    system "rm -Rf $f";
-  }
-}
-

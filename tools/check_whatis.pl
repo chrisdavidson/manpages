@@ -21,9 +21,6 @@ my $error_file = File::HomeDir::home() . "/manpages/output/broken_error_file.txt
 my $whatis_file = File::HomeDir::home() . "/manpages/output/whatis_results.txt";
 my $error_whatis_file = File::HomeDir::home() . "/manpages/output/error_whatis.txt";
 
-my @output_files = qw ($whatis_file $error_whatis_file);
-
-&clear_old_files();
 &iterate_error_file();
 &strip_emptylines();
 &dedup_whatis_results();
@@ -68,11 +65,5 @@ sub dedup_whatis_results() {
     $seen{$_}++;
     next if $seen{$_} > 1;
     print;
-  }
-}
-
-sub clear_old_files() {
-  for my $f (@output_files) {
-    system "rm -rf $f";
   }
 }

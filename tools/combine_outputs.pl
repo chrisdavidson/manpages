@@ -25,10 +25,6 @@ my $broken_contrib_file = File::HomeDir::home() . "/manpages/output/broken_contr
 my $combined_base_file = File::HomeDir::home() . "/manpages/output/combined_base_refs.txt";
 my $combined_contrib_file = File::HomeDir::home() . "/manpages/output/combined_contrib_refs.txt";
 
-my @output_files = qw ($combined_based_file $combined_contrib_file); 
-
-#We want to make sure we do not have previous runs of this script
-&clear_old_files();
 #main program loop
 #combining the base file output with the initial refs
 &combine_refs_base();
@@ -99,10 +95,4 @@ sub findword() {
   }
   close($fh);
   return(0);
-}
-
-sub clear_old_files() {
-  for my $f (@output_files) {
-    system "rm -rf $f";
-  }
 }
