@@ -44,6 +44,9 @@ sub process_refs_file() {
   while (<$fh>) {
     my @split_line = split(/ /, $_);
 
+    #have to work some magic here and figure out how to send the infroamtion to appropriate file
+    #There are some hacks in here to "check" if the functions are returning results
+    #Need to look at this time more
     foreach my $item (@split_line) {
       if ($item =~ /gz$/) {
         $item =~ s/\s+$//g;

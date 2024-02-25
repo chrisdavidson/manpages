@@ -42,10 +42,17 @@ sub combine_refs_base() {
 
   while (<$fh>) {
     my @split_line = split(" ", $_);
-    my $entry = substr($split_line[0], 0, -3);
-    my $wordstatus = findword($entry, $broken_base_file);
-    if ($wordstatus ne "0") {
-      print $ofh $split_line[0] . ":" . $wordstatus;
+    my $counter = 1;
+    foreach my $item (@split_line) {
+      if ($counter ne "1") {
+        my $entry = substr($item, 0, -3);
+        my @wordstatus = findword($entry, $broken_base_file);
+        foreach my $word (@wordstatus) {
+          print "Word is: " . $word;
+          print $ofh $word;
+        }
+      }
+      $counter = 2;
     }
   }
   close($ofh);
@@ -55,13 +62,19 @@ sub combine_refs_base() {
 sub combine_refs_contrib() {
   open(my $fh, '<', $broken_refs_file) or die $!;
   open(my $ofh, '>>', $combined_contrib_file) or die $!;
-
   while (<$fh>) {
     my @split_line = split(" ", $_);
-    my $entry = substr($split_line[0], 0, -3);
-    my $wordstatus = findword($entry, $broken_contrib_file);
-    if ($wordstatus ne "0") {
-      print $ofh $split_line[0] . ":" . $wordstatus;
+    my $counter = 1;
+    foreach my $item (@split_line) {
+      if ($counter ne "1") {
+        my $entry = substr($item, 0, -3);
+        my @wordstatus = findword($entry, $broken_contrib_file);
+        foreach my $word (@wordstatus) {
+          print "Word is: " . $word;
+          print $ofh $word;
+        }
+      }
+      $counter = 2;
     }
   }
   close($ofh);
@@ -74,20 +87,20 @@ sub combine_refs_contrib() {
 #<fhl> - the file to search for the results in
 #
 #Return
-# 1 - Found it
-# 0 - Did not Find It
+#the list of all entries in a hash map
 sub findword() {
   my $word = shift;
   my $fhl = shift;
   open(my $fh, '<', $fhl) or die $!;
 
+  my @results;
+
   while (<$fh>) {
     my @split_lines = split("/", $_);
     if ($split_lines[-1] =~ $word) {
-      close($fh);
-      return $_;
+      push @results, $_;
     }
   }
   close($fh);
-  return(0);
+  return @results;
 }
