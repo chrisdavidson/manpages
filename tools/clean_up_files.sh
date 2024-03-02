@@ -5,6 +5,7 @@ OUTPUT_DIR="/manpages/output"
 FILE_LIST='broken_base.txt 
               broken_base.txt.bac 
               broken_refs.txt 
+              broken_refs.txt.bac
               broken_contrib.txt 
               broken_contrib.txt.bac 
               broken_error_file.txt 
