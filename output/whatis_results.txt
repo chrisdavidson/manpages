@@ -99,6 +99,7 @@ intro(3) - introduction to the C libraries
 cxgbe, cc, cxl, if_cc, if_cxgbe, if_cxl, if_vcc, if_vcxgbe, if_vcxl, vcc, vcxgbe, vcxl(4) - Chelsio T4-, T5-, and T6-based 100Gb, 40Gb, 25Gb, 10Gb, and 1Gb Ethernet adapter driver
 cc: clang, c++, cc, CC, clang++, clang-cpp, cpp(1) - the Clang C, C++, and Objective-C compiler
 c++: clang++: cpp: clang, c++, cc, CC, clang++, clang-cpp, cpp(1) - the Clang C, C++, and Objective-C compiler
+Filter::cpp(3) - cpp source filter
 clang-cpp: clang, c++, cc, CC, clang++, clang-cpp, cpp(1) - the Clang C, C++, and Objective-C compiler
 atse: atse, altera_atse(4) - driver for the Altera Triple-Speed Ethernet MegaCore
 au_fcntl_cmd_to_bsm: au_bsm_to_fcntl_cmd, au_fcntl_cmd, au_fcntl_cmd_t_bsm, au_fcntl_cmd_to_bsm(3) - convert between BSM and local fcntl(2) command values

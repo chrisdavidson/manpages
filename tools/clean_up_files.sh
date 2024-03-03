@@ -1,6 +1,7 @@
 #!/usr/local/bin/zsh
 
 OUTPUT_DIR="/manpages/output"
+MANDOC_OUTPUT_DIR="/manpages/output/mandoc"
 
 FILE_LIST='broken_base.txt 
               broken_base.txt.bac 
@@ -13,10 +14,26 @@ FILE_LIST='broken_base.txt
               combined_base_refs.txt 
               combined_contrib_refs.txt 
               whatis_results.txt 
-              whatis_results.txt.bac
-              mandoc_style_errors.txt'
+              whatis_results.txt.bac'
+
+MANDOC_FILE_LIST='mandoc_style_errors.txt
+                  mandoc_80characters_error.txt
+                  mandoc_escape_sequence_error.txt
+                  mandoc_newsentence_error.txt
+                  mandoc_pargraph_error.txt
+                  mandoc_fn_error.txt
+                  mandoc_missingtitles_error.txt
+                  mandoc_paragraph_error.txt
+                  mandoc_tabs_error.txt
+                  mandoc_whitespace_error.txt'
 
 echo "Cleaning up the output..."
 for f in $FILE_LIST;  
   do rm -Rf "${HOME}/${OUTPUT_DIR}/${f}" done
 done
+
+echo "Cleaning up the mandoc output.."
+for f in $MANDOC_FILE_LIST;
+  do rm -Rf "${HOME}/${MANDOC_OUTPUT_DIR}/${f}" done
+done
+
