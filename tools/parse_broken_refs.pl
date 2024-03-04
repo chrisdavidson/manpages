@@ -55,7 +55,9 @@ sub process_refs_file() {
         if (length($key) == 0) {
           create_error_file($manual_page);
         } else {
-          if ($value =~ '/contrib/') {
+          if (($value =~ '/contrib/') || ($value =~ 'sys/contrib/') ||
+              ($value =~ '/crypto/') || ($value =~ 'sys/cddl') ||
+              ($value =~ '/sys/gnu') || ($value =~ '/cddl/')) {
             create_contrib_file($key, $value);
           } else {
             create_base_file($key, $value);

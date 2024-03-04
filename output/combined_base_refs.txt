@@ -59,9 +59,7 @@ xlocale.3 /home/chrisdavidson/src/manuals/lib/libc/locale/xlocale.3
 xlocale.3 /home/chrisdavidson/src/manuals/lib/libc/locale/xlocale.3
 altera_atse.4 /home/chrisdavidson/src/manuals/share/man/man4/altera_atse.4
 altera_atse.4 /home/chrisdavidson/src/manuals/share/man/man4/altera_atse.4
-dwatch.1 /home/chrisdavidson/src/manuals/cddl/usr.sbin/dwatch/dwatch.1
 service.8 /home/chrisdavidson/src/manuals/usr.sbin/service/service.8
-ssh-keygen.1 /home/chrisdavidson/src/manuals/crypto/openssh/ssh-keygen.1
 beinstall.8 /home/chrisdavidson/src/manuals/share/man/man8/beinstall.8
 bectl.8 /home/chrisdavidson/src/manuals/sbin/bectl/bectl.8
 ufs_disk_close.3 /home/chrisdavidson/src/manuals/lib/libufs/ufs_disk_close.3
@@ -146,7 +144,6 @@ asa.1 /home/chrisdavidson/src/manuals/usr.bin/asa/asa.1
 gprof.1 /home/chrisdavidson/src/manuals/usr.bin/gprof/gprof.1
 xlocale.3 /home/chrisdavidson/src/manuals/lib/libc/locale/xlocale.3
 xlocale.3 /home/chrisdavidson/src/manuals/lib/libc/locale/xlocale.3
-ssh-keygen.1 /home/chrisdavidson/src/manuals/crypto/openssh/ssh-keygen.1
 ufs_disk_close.3 /home/chrisdavidson/src/manuals/lib/libufs/ufs_disk_close.3
 xlocale.3 /home/chrisdavidson/src/manuals/lib/libc/locale/xlocale.3
 xlocale.3 /home/chrisdavidson/src/manuals/lib/libc/locale/xlocale.3
@@ -233,7 +230,6 @@ scsi.4 /home/chrisdavidson/src/manuals/share/man/man4/scsi.4
 csh.1 /home/chrisdavidson/src/manuals/share/doc/usd/04.csh/csh.1
 ifmib.4 /home/chrisdavidson/src/manuals/share/man/man4/ifmib.4
 inetd.8 /home/chrisdavidson/src/manuals/usr.sbin/inetd/inetd.8
-ssh-keygen.1 /home/chrisdavidson/src/manuals/crypto/openssh/ssh-keygen.1
 xlocale.3 /home/chrisdavidson/src/manuals/lib/libc/locale/xlocale.3
 xlocale.3 /home/chrisdavidson/src/manuals/lib/libc/locale/xlocale.3
 xlocale.3 /home/chrisdavidson/src/manuals/lib/libc/locale/xlocale.3
@@ -243,7 +239,6 @@ xlocale.3 /home/chrisdavidson/src/manuals/lib/libc/locale/xlocale.3
 xlocale.3 /home/chrisdavidson/src/manuals/lib/libc/locale/xlocale.3
 xlocale.3 /home/chrisdavidson/src/manuals/lib/libc/locale/xlocale.3
 xlocale.3 /home/chrisdavidson/src/manuals/lib/libc/locale/xlocale.3
-dwatch.1 /home/chrisdavidson/src/manuals/cddl/usr.sbin/dwatch/dwatch.1
 bsdconfig.8 /home/chrisdavidson/src/manuals/usr.sbin/bsdconfig/bsdconfig.8
 csh.1 /home/chrisdavidson/src/manuals/share/doc/usd/04.csh/csh.1
 xlocale.3 /home/chrisdavidson/src/manuals/lib/libc/locale/xlocale.3

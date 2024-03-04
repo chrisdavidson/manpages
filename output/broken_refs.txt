@@ -34,8 +34,9 @@ WRITE(6) ctladm.8.gz
 WmiDataId(1) acpi_wmi.4.gz
 WmiExpense(1) acpi_wmi.4.gz
 X(1) csh.1.gz tcsh.1.gz
-X(7) bthidd.8.gz hmt.4.gz agpgart.4.gz bcm5974.4.gz uep.4.gz ietp.4.gz wmt.4.gz agp.4.gz
+X(7) bthidd.8.gz hier.7.gz hmt.4.gz agpgart.4.gz bcm5974.4.gz uep.4.gz ietp.4.gz wmt.4.gz agp.4.gz
 Xdialog(1) bsdconfig.8.gz
+Xserver(1) hier.7.gz
 __cxa_atexit(3) _Exit.3.gz exit.3.gz
 accept(3) rdma_post_readv.3.gz rdma_reject.3.gz rdma_listen.3.gz rdma_post_sendv.3.gz rdma_get_request.3.gz rdma_post_send.3.gz rdma_post_read.3.gz rdma_notify.3.gz rdma_post_writev.3.gz rdma_post_ud_send.3.gz rdma_disconnect.3.gz rdma_get_dst_port.3.gz rdma_post_write.3.gz
 access(5) tcpdmatch.8.gz tcpdchk.8.gz tcpd.8.gz hosts_options.5.gz hosts.allow.5.gz hosts_ctl.3.gz request_set.3.gz request_init.3.gz hosts_access.3.gz
@@ -72,6 +73,7 @@ blkid(8) zfs.4.gz
 bn(3) libmp.3.gz
 boot(9) vfs_unmountall.9.gz
 bridge(8) netmap.4.gz
+bsdisks(8) hier.7.gz
 bsnmpd(8) snmp_hostres.3.gz
 btowc_l(3) xlocale.3.gz
 bus(9) bus_delayed_attach_children.9.gz intro.9.gz BUS_CHILD_PNPINFO.9.gz BUS_CHILD_LOCATION.9.gz
@@ -93,6 +95,7 @@ critical_section(9) DPCPU_ID_SET.9.gz DPCPU_GET.9.gz DPCPU_PTR.9.gz DPCPU_DEFINE
 crl(1) fetchListURL.3.gz fetchGet.3.gz fetchList.3.gz fetchStatHTTP.3.gz fetchReqHTTP.3.gz fetchGetHTTP.3.gz fetchPutFTP.3.gz fetchGetURL.3.gz fetchStatURL.3.gz fetchListHTTP.3.gz fetchFreeURL.3.gz fetchPutHTTP.3.gz fetchXGet.3.gz fetchXGetFTP.3.gz fetchXGetHTTP.3.gz fetchStatFile.3.gz fetch.3.gz fetchXGetURL.3.gz fetchStatFTP.3.gz fetchPut.3.gz fetchGetFile.3.gz fetchMakeURL.3.gz fetchStat.3.gz fetchPutURL.3.gz fetchGetFTP.3.gz fetchParseURL.3.gz fetchXGetFile.3.gz fetchPutFile.3.gz fetchListFile.3.gz fetchListFTP.3.gz
 crypto(3) TRUTH_OK.3.gz snmp_pdu_dump.3.gz snmp_pdu_decode_secmode.3.gz TRUTH_MK.3.gz snmp_pdu_decode.3.gz snmp_value_free.3.gz snmp_calc_keychange.3.gz TRUTH_GET.3.gz snmp_pdu_encode.3.gz snmp_get_local_keys.3.gz bsnmplib.3.gz snmp_value_parse.3.gz snmp_passwd_to_keys.3.gz snmp_pdu_decode_header.3.gz snmp_pdu_free.3.gz snmp_pdu_decode_scoped.3.gz libmp.3.gz snmp_pdu_init_secparams.3.gz snmp_value_copy.3.gz
 cryptosoft(4) crypto_get_params.9.gz crypto_freesession.9.gz crypto_auth_hash.9.gz crypto_session.9.gz crypto_newsession.9.gz crypto_cipher.9.gz
+cups(1) hier.7.gz
 cvs(1) inetd.8.gz inetd.conf.5.gz mdoc.7.gz
 datagram(1) cxgbetool.8.gz
 deadfs(9) insmntque1.9.gz insmntque.9.gz
@@ -123,6 +126,7 @@ dod(6) bsnmpget.1.gz bsnmpwalk.1.gz bsnmpset.1.gz
 dot(1) bsdconfig.8.gz
 dpv(1) src-env.conf.5.gz src.conf.5.gz
 dpv(3) src-env.conf.5.gz src.conf.5.gz
+drm(7) hier.7.gz
 dsymutil(1) CC.1.gz cc.1.gz c++.1.gz clang.1.gz clang++.1.gz cpp.1.gz clang-cpp.1.gz
 dumpadm(8) zpool-features.7.gz
 dumpdir(8) restore.8.gz rrestore.8.gz
@@ -268,6 +272,7 @@ libtool(1) kadm5_pwcheck.3.gz
 libxo-csv(7) libxo.3.gz
 listen(3) rdma_connect.3.gz rdma_reject.3.gz rdma_accept.3.gz rdma_get_request.3.gz rdma_create_id.3.gz rdma_notify.3.gz rdma_get_cm_event.3.gz rdma_bind_addr.3.gz rdma_disconnect.3.gz rdma_create_ep.3.gz
 lli(1) binmiscctl.8.gz
+local_unbound(8) hier.7.gz
 lockf(2) pwdx.1.gz pargs.1.gz procstat.1.gz penv.1.gz
 log(4) watchdogd.8.gz
 lookup(9) lockmgr_disown.9.gz lockmgr_recursed.9.gz lockmgr_args_rw.9.gz lockmgr_args.9.gz lockmgr_rw.9.gz lockmgr_assert.9.gz lockmgr.9.gz lock.9.gz lockdestroy.9.gz lockinit.9.gz lockstatus.9.gz lockmgr_printinfo.9.gz
@@ -346,7 +351,7 @@ on(1) tcpd.8.gz
 open(3) aliases.5.gz
 opencrypto(9) cryptodev.4.gz crypto.4.gz
 openprom(4) openfirmware.4.gz openfirm.4.gz
-openssl(1) enigma.1.gz crypt.1.gz certctl.8.gz rpc.tlsclntd.8.gz rpc.tlsservd.8.gz uefisign.8.gz wpa_supplicant.conf.5.gz security.7.gz securelevel.7.gz
+openssl(1) enigma.1.gz crypt.1.gz certctl.8.gz rpc.tlsclntd.8.gz rpc.tlsservd.8.gz uefisign.8.gz wpa_supplicant.conf.5.gz security.7.gz securelevel.7.gz hier.7.gz
 openssl-passwd(1) pw.8.gz
 option(3) rdma_create_id.3.gz
 options(4) ntp_gettime.2.gz ntp_adjtime.2.gz ipmon.8.gz
@@ -357,7 +362,6 @@ otool(1) objdump.1.gz llvm-objdump.1.gz
 page(9) intro.9.gz
 pam(8) login.1.gz
 pc(1) gprof.1.gz stab.5.gz
-pc(5) hier.7.gz
 pcpu(9) vnet.9.gz vimage.9.gz
 pdns_recursor(8) resolvconf.conf.5.gz
 pdnsd(8) resolvconf.conf.5.gz
@@ -376,6 +380,7 @@ pkg-version(8) periodic.conf.5.gz
 pkg_add(1) pkg.7.gz upgt.4.gz if_upgt.4.gz
 pkg_create(1) pkg.7.gz
 pkg_info(1) pkg.7.gz
+pkgconf(1) hier.7.gz
 pkt-gen(8) netmap.4.gz
 plot(1) environ.7.gz
 plot(3) lpr.1.gz lpd.8.gz printcap.5.gz
@@ -499,7 +504,7 @@ twm(1) csh.1.gz tcsh.1.gz
 ugensa(4) ucom.4.gz
 ukswitch(4) etherswitch.4.gz
 umt(4) hms.4.gz
-unbound(8) rc.conf.5.gz src-env.conf.5.gz src.conf.5.gz rc.conf.local.5.gz resolvconf.conf.5.gz
+unbound(8) rc.conf.5.gz src-env.conf.5.gz src.conf.5.gz rc.conf.local.5.gz resolvconf.conf.5.gz hier.7.gz
 unbound-anchor(8) drill.1.gz
 unbound.conf(5) local-unbound-anchor.8.gz local-unbound-checkconf.8.gz local-unbound.8.gz local-unbound-control.8.gz local-unbound.conf.5.gz
 ungetwc_l(3) xlocale.3.gz

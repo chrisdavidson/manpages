@@ -41,6 +41,8 @@ libbsm.3 /home/chrisdavidson/src/manuals/contrib/openbsm/libbsm/libbsm.3
 audit.log.5 /home/chrisdavidson/src/manuals/contrib/openbsm/man/audit.log.5
 au_free_token.3 /home/chrisdavidson/src/manuals/contrib/openbsm/libbsm/au_free_token.3
 snmp_target.3 /home/chrisdavidson/src/manuals/contrib/bsnmp/snmp_target/snmp_target.3
+dwatch.1 /home/chrisdavidson/src/manuals/cddl/usr.sbin/dwatch/dwatch.1
+ssh-keygen.1 /home/chrisdavidson/src/manuals/crypto/openssh/ssh-keygen.1
 gelf_xlatetof.3 /home/chrisdavidson/src/manuals/contrib/elftoolchain/libelf/gelf_xlatetof.3
 zfs.4 /home/chrisdavidson/src/manuals/sys/contrib/openzfs/man/man4/zfs.4
 rdma_destroy_event_channel.3 /home/chrisdavidson/src/manuals/contrib/ofed/librdmacm/man/rdma_destroy_event_channel.3
