@@ -1,6 +1,7 @@
 #!/usr/local/bin/zsh
 
-find /usr/share/man -type f -name '*gz' | \
+MAN_DIR="${HOME}/src/manuals"
+find "${MAN_DIR}" -type f -name '*gz' | \
   xargs zgrep -H . |                      \
   awk -f check_man_pages.awk |            \
   sort |                                  \
