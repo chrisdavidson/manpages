@@ -4,8 +4,6 @@ echo "cleaning up files.."
 sh clean_up_files.sh
 echo "working through mandoc -Tlint..."
 sh mandoc_results.sh
-echo "working through whatis ..."
-perl check_whatis.pl
 echo "parsing manual pages..."
 sh check_pages.sh
 echo "processing results of manual pages.."
@@ -15,3 +13,5 @@ cp /home/chrisdavidson/manpages/output/broken_refs.txt /home/chrisdavidson/manpa
 cat /home/chrisdavidson/manpages/output/broken_refs.txt.bac | tr -s '[:space:]' > /home/chrisdavidson/manpages/output/broken_refs.txt
 echo "combine results..."
 perl combine_outputs.pl
+echo "working through whatis ..."
+perl check_whatis.pl
