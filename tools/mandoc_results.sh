@@ -7,7 +7,7 @@ echo "Deleting previously generated files..."
 rm ../output/mandoc/*.txt
 
 echo "Finding all the manual pages..."
-find "${MANDOC_LOCATION}" -name '*[1-9]' -type f | xargs mandoc -Tlint  > /home/chrisdavidson/manpages/output/mandoc/mandoc_style_errors.txt
+find /usr/share/man ~/src/manuals/ -type f | awk -F/ '{f=$NF; sub(/\.gz$/, "", f); if ($0 ~ ("^" ENVIRON["HOME"]))a[f]=$0; else s[f]=$0}END{for (f in a) if (f in s) print a[f]}' | xargs mandoc -Tlint > /home/chrisdavidson/manpages/output/mandoc/mandoc_style_errors.txt
 
 echo "Finding entires with more than 80 characters..."
 cat "${MANDOC_STYLE}" | grep "longer than 80" > ../output/mandoc/mandoc_80characters_error.txt
