@@ -35,3 +35,6 @@ cat "${MANDOC_STYLE}" | grep "invalid escape sequence" > ../output/mandoc/mandoc
 
 echo "Finding invalid paragraph macrco PP after SS.."
 cat "${MANDOC_STYLE}" | grep "skipping paragraph macro" > ../output/mandoc/mandoc_paragraph_error.txt
+
+echo "Finding files with trailing whitespaces.."
+find "${MANDOC_LOCATION}" -type f -exec grep -l " +$" {} \"; ../output/mandoc/trailing_whitespaces.txt

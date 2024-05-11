@@ -1,5 +1,4 @@
-/etc/rc.conf(5) if_lagg.4.gz lagg.4.gz trunk.4.gz
-<fillmein>(9) bp.9.gz buf.9.gz
+ATF(7) hier.7.gz
 BUS_ALLOC_RESOURCE(9) BUS_TEARDOWN_INTR.9.gz bus_setup_intr.9.gz BUS_SETUP_INTR.9.gz bus_teardown_intr.9.gz
 DEBUG(7) netlink.4.gz
 DEBUG2(8) netlink.4.gz
@@ -27,6 +26,7 @@ SSL_sendfile(3) ktls.4.gz
 SSL_write(3) ktls.4.gz
 Sendmail(8) vacation.1.gz
 UEFI(8) syscons.4.gz sc.4.gz
+UMA(9) geli.8.gz
 VFS_INIT(9) VFS.9.gz
 VNET(9) mac_ipacl.4.gz intro.9.gz
 VOP_SETLABEL(9) vnode.9.gz mac.9.gz
@@ -65,7 +65,8 @@ authNoPriv(2) snmp_target.3.gz
 authPriv(3) snmp_target.3.gz
 bash(1) dwatch.1.gz service.8.gz
 bcrypt_pbkdf(3) ssh-keygen.1.gz
-beadm(1) beinstall.8.gz bectl.8.gz beinstall.sh.8.gz
+beadm(1) beinstall.8.gz beinstall.sh.8.gz
+beadm(8) bectl.8.gz
 begin(3) elf32_xlatetof.3.gz gelf_xlatetof.3.gz elf64_xlatetom.3.gz elf32_xlatetom.3.gz gelf_xlatetom.3.gz elf64_xlatetof.3.gz
 blank(3) ufs_disk_fillout_blank.3.gz ufs_disk_fillout.3.gz ufs_disk_write.3.gz ufs_disk_close.3.gz
 blink(1) uled.4.gz
@@ -144,7 +145,7 @@ environ(5) ee.1.gz edit.1.gz ree.1.gz
 ep(3) rdma_post_recv.3.gz rdma_destroy_ep.3.gz rdma_reg_write.3.gz rdma_create_srq.3.gz rdma_reg_read.3.gz rdma_post_recvv.3.gz rdma_dereg_mr.3.gz rdma_create_ep.3.gz rdma_getaddrinfo.3.gz rdma_reg_msgs.3.gz
 epoll(7) netmap.4.gz
 eqn(1) man.1.gz
-errno(3) zpool-events.8.gz item_term.3.gz set_menu_init.3.gz menu_opts.3.gz set_top_row.3.gz form_sub.3.gz fd_suspend.3.gz current_item.3.gz bsnmpd_reset_usm_stats.3.gz field_fore.3.gz form.3.gz menu_mark.3.gz target_delete_address.3.gz field_just.3.gz string_get.3.gz ip_commit.3.gz set_field_init.3.gz target_next_notify.3.gz field_index.3.gz target_new_param.3.gz form_term.3.gz menu_pad.3.gz free_item.3.gz or_unregister.3.gz reqid_istype.3.gz menu_back.3.gz snmp_input_finish.3.gz oid_zeroDotZero.3.gz oid_save.3.gz set_menu_pattern.3.gz menu_opts_off.3.gz reqid_base.3.gz snmp_send_trap.3.gz current_field.3.gz form_field_just.3.gz form_driver.3.gz INSERT_OBJECT_INT.3.gz INSERT_OBJECT_INT_LINK.3.gz snmp_pdu_auth_access.3.gz menu_sub.3.gz menu_hook.3.gz menu_attributes.3.gz string_get_max.3.gz field_init.3.gz set_field_pad.3.gz target_delete_notify.3.gz set_field_just.3.gz menu_new.3.gz set_field_fore.3.gz set_menu_fore.3.gz index_append.3.gz usm_delete_user.3.gz string_free.3.gz target_flush_all.3.gz new_item.3.gz NEXT_OBJECT_OID_LINK_INDEX.3.gz usm_user.3.gz index_compare.3.gz usm_flush_users.3.gz form_page.3.gz menu_format.3.gz oid_usmUnknownEngineIDs.3.gz NEXT_OBJECT_OID.3.gz fd_deselect.3.gz index_compare_off.3.gz set_fieldtype_choice.3.gz field_type.3.gz scale_menu.3.gz field_count.3.gz post_menu.3.gz target_delete_param.3.gz set_form_win.3.gz ip_rollback.3.gz INSERT_OBJECT_OID_LINK_INDEX.3.gz field_term.3.gz snmp_input_start.3.gz item_value.3.gz reqid_allocate.3.gz set_item_value.3.gz field_buffer.3.gz ip_get.3.gz set_field_term.3.gz link_fieldtype.3.gz pos_form_cursor.3.gz oid_commit.3.gz field_opts_on.3.gz top_row.3.gz INSERT_OBJECT_INT_LINK_INDEX.3.gz index_append_off.3.gz form_opts_on.3.gz mitem_opts.3.gz snmpmod.3.gz set_menu_format.3.gz snmp_send_port.3.gz FIND_OBJECT_INT_LINK.3.gz target_param.3.gz set_item_opts.3.gz set_menu_term.3.gz item_init.3.gz unpost_form.3.gz set_field_type.3.gz or_register.3.gz FIND_OBJECT_OID.3.gz index_decode.3.gz NEXT_OBJECT_INT_LINK.3.gz menu_grey.3.gz field_opts_off.3.gz mitem_value.3.gz oid_get.3.gz buf_size.3.gz form_init.3.gz menu_cursor.3.gz NEXT_OBJECT_INT_LINK_INDEX.3.gz menu_post.3.gz field_status.3.gz set_menu_win.3.gz set_form_opts.3.gz set_fieldtype_arg.3.gz set_form_term.3.gz field_info.3.gz oid_rollback.3.gz menu_items.3.gz FIND_OBJECT_INT_LINK_INDEX.3.gz set_max_field.3.gz start_tick.3.gz set_field_status.3.gz set_field_back.3.gz form_field_validation.3.gz field_arg.3.gz new_fieldtype.3.gz buf_alloc.3.gz get_ticks.3.gz set_menu_back.3.gz form_field_opts.3.gz usm_find_user.3.gz timer_start.3.gz form_fieldtype.3.gz set_menu_opts.3.gz unpost_menu.3.gz form_post.3.gz target_first_address.3.gz menu_init.3.gz set_item_term.3.gz timer_start_repeat.3.gz set_menu_mark.3.gz target_first_param.3.gz set_field_buffer.3.gz menu_driver.3.gz fd_resume.3.gz set_menu_sub.3.gz NEXT_OBJECT_INT.3.gz set_field_opts.3.gz NEXT_OBJECT_OID_LINK.3.gz usm_new_user.3.gz field_pad.3.gz form_field_attributes.3.gz form_opts_off.3.gz field_opts.3.gz set_menu_pad.3.gz comm_define.3.gz FIND_OBJECT_INT.3.gz mitem_current.3.gz timer_stop.3.gz menu_fore.3.gz form_field_info.3.gz target_new_address.3.gz post_form.3.gz scale_form.3.gz string_commit.3.gz new_menu.3.gz item_index.3.gz target_next_address.3.gz usm_next_user.3.gz set_form_sub.3.gz reqid_type.3.gz item_opts_off.3.gz systemg.3.gz reqid_next.3.gz field_back.3.gz FIND_OBJECT_OID_LINK.3.gz FIND_OBJECT_OID_LINK_INDEX.3.gz set_menu_items.3.gz target_activate_address.3.gz form_cursor.3.gz form_hook.3.gz move_field.3.gz target_address.3.gz usm_first_user.3.gz item_opts_on.3.gz form_field_buffer.3.gz menu_win.3.gz set_form_fields.3.gz mitem_new.3.gz snmpd_target_stat.3.gz target_next_param.3.gz this_tick.3.gz set_form_page.3.gz target_first_notify.3.gz pos_menu_cursor.3.gz bsnmpd_get_usm_stats.3.gz free_fieldtype.3.gz menu_opts_on.3.gz target_notify.3.gz set_menu_grey.3.gz form_win.3.gz fd_select.3.gz oid_usmNotInTimeWindows.3.gz snmp_output.3.gz menu_pattern.3.gz form_fields.3.gz form_opts.3.gz item_count.3.gz set_form_init.3.gz target_new_notify.3.gz ip_save.3.gz snmpd_usmstats.3.gz form_field.3.gz dynamic_fieldinfo.3.gz community.3.gz string_rollback.3.gz set_current_field.3.gz menu.3.gz INSERT_OBJECT_OID_LINK.3.gz string_save.3.gz free_menu.3.gz set_item_init.3.gz bsnmpd_get_target_stats.3.gz set_current_item.3.gz menu_term.3.gz item_opts.3.gz INSERT_OBJECT_OID.3.gz
+errno(3) zpool-events.8.gz item_term.3.gz set_menu_init.3.gz menu_opts.3.gz asctime.3.gz set_top_row.3.gz form_sub.3.gz fd_suspend.3.gz current_item.3.gz bsnmpd_reset_usm_stats.3.gz field_fore.3.gz form.3.gz menu_mark.3.gz target_delete_address.3.gz field_just.3.gz string_get.3.gz ip_commit.3.gz set_field_init.3.gz target_next_notify.3.gz localtime.3.gz field_index.3.gz target_new_param.3.gz form_term.3.gz menu_pad.3.gz free_item.3.gz timegm.3.gz or_unregister.3.gz reqid_istype.3.gz menu_back.3.gz snmp_input_finish.3.gz oid_zeroDotZero.3.gz gmtime.3.gz oid_save.3.gz set_menu_pattern.3.gz menu_opts_off.3.gz reqid_base.3.gz snmp_send_trap.3.gz current_field.3.gz form_field_just.3.gz localtime_r.3.gz form_driver.3.gz INSERT_OBJECT_INT.3.gz INSERT_OBJECT_INT_LINK.3.gz snmp_pdu_auth_access.3.gz menu_sub.3.gz menu_hook.3.gz menu_attributes.3.gz string_get_max.3.gz field_init.3.gz set_field_pad.3.gz target_delete_notify.3.gz set_field_just.3.gz menu_new.3.gz set_field_fore.3.gz mktime.3.gz set_menu_fore.3.gz index_append.3.gz usm_delete_user.3.gz string_free.3.gz target_flush_all.3.gz new_item.3.gz NEXT_OBJECT_OID_LINK_INDEX.3.gz usm_user.3.gz index_compare.3.gz usm_flush_users.3.gz form_page.3.gz menu_format.3.gz oid_usmUnknownEngineIDs.3.gz NEXT_OBJECT_OID.3.gz fd_deselect.3.gz index_compare_off.3.gz set_fieldtype_choice.3.gz field_type.3.gz scale_menu.3.gz field_count.3.gz gmtime_r.3.gz post_menu.3.gz target_delete_param.3.gz set_form_win.3.gz ip_rollback.3.gz INSERT_OBJECT_OID_LINK_INDEX.3.gz field_term.3.gz snmp_input_start.3.gz item_value.3.gz reqid_allocate.3.gz set_item_value.3.gz field_buffer.3.gz ip_get.3.gz set_field_term.3.gz link_fieldtype.3.gz pos_form_cursor.3.gz oid_commit.3.gz field_opts_on.3.gz top_row.3.gz INSERT_OBJECT_INT_LINK_INDEX.3.gz index_append_off.3.gz form_opts_on.3.gz mitem_opts.3.gz snmpmod.3.gz set_menu_format.3.gz snmp_send_port.3.gz FIND_OBJECT_INT_LINK.3.gz target_param.3.gz asctime_r.3.gz set_item_opts.3.gz set_menu_term.3.gz item_init.3.gz unpost_form.3.gz set_field_type.3.gz or_register.3.gz FIND_OBJECT_OID.3.gz index_decode.3.gz NEXT_OBJECT_INT_LINK.3.gz menu_grey.3.gz field_opts_off.3.gz mitem_value.3.gz oid_get.3.gz buf_size.3.gz form_init.3.gz menu_cursor.3.gz NEXT_OBJECT_INT_LINK_INDEX.3.gz menu_post.3.gz field_status.3.gz set_menu_win.3.gz set_form_opts.3.gz set_fieldtype_arg.3.gz set_form_term.3.gz field_info.3.gz oid_rollback.3.gz menu_items.3.gz FIND_OBJECT_INT_LINK_INDEX.3.gz set_max_field.3.gz start_tick.3.gz set_field_status.3.gz set_field_back.3.gz form_field_validation.3.gz field_arg.3.gz new_fieldtype.3.gz buf_alloc.3.gz get_ticks.3.gz set_menu_back.3.gz form_field_opts.3.gz usm_find_user.3.gz timer_start.3.gz form_fieldtype.3.gz set_menu_opts.3.gz unpost_menu.3.gz form_post.3.gz target_first_address.3.gz menu_init.3.gz set_item_term.3.gz timer_start_repeat.3.gz set_menu_mark.3.gz target_first_param.3.gz set_field_buffer.3.gz menu_driver.3.gz fd_resume.3.gz set_menu_sub.3.gz NEXT_OBJECT_INT.3.gz set_field_opts.3.gz difftime.3.gz NEXT_OBJECT_OID_LINK.3.gz usm_new_user.3.gz field_pad.3.gz form_field_attributes.3.gz form_opts_off.3.gz field_opts.3.gz set_menu_pad.3.gz comm_define.3.gz FIND_OBJECT_INT.3.gz mitem_current.3.gz timer_stop.3.gz menu_fore.3.gz form_field_info.3.gz target_new_address.3.gz post_form.3.gz scale_form.3.gz string_commit.3.gz new_menu.3.gz item_index.3.gz target_next_address.3.gz usm_next_user.3.gz set_form_sub.3.gz reqid_type.3.gz item_opts_off.3.gz systemg.3.gz reqid_next.3.gz field_back.3.gz FIND_OBJECT_OID_LINK.3.gz FIND_OBJECT_OID_LINK_INDEX.3.gz set_menu_items.3.gz target_activate_address.3.gz form_cursor.3.gz form_hook.3.gz move_field.3.gz target_address.3.gz usm_first_user.3.gz item_opts_on.3.gz form_field_buffer.3.gz menu_win.3.gz set_form_fields.3.gz mitem_new.3.gz snmpd_target_stat.3.gz target_next_param.3.gz this_tick.3.gz set_form_page.3.gz target_first_notify.3.gz pos_menu_cursor.3.gz bsnmpd_get_usm_stats.3.gz free_fieldtype.3.gz ctime_r.3.gz menu_opts_on.3.gz ctime.3.gz target_notify.3.gz set_menu_grey.3.gz form_win.3.gz fd_select.3.gz oid_usmNotInTimeWindows.3.gz snmp_output.3.gz menu_pattern.3.gz form_fields.3.gz form_opts.3.gz item_count.3.gz set_form_init.3.gz target_new_notify.3.gz ip_save.3.gz snmpd_usmstats.3.gz form_field.3.gz dynamic_fieldinfo.3.gz community.3.gz string_rollback.3.gz set_current_field.3.gz menu.3.gz INSERT_OBJECT_OID_LINK.3.gz string_save.3.gz free_menu.3.gz set_item_init.3.gz bsnmpd_get_target_stats.3.gz set_current_item.3.gz menu_term.3.gz item_opts.3.gz INSERT_OBJECT_OID.3.gz
 esp(4) SCSI.4.gz cam.4.gz scsi.4.gz scbus.4.gz CAM.4.gz
 ethermib(4) ifmib.4.gz
 ethtool(8) netmap.4.gz
@@ -196,7 +197,6 @@ git(1) development.7.gz release.7.gz
 glob(7) sftp.1.gz ssh_config.5.gz local-unbound.conf.5.gz sshd_config.5.gz
 gpg(1) enigma.1.gz crypt.1.gz
 gprof(8) src-env.conf.5.gz src.conf.5.gz
-gptboot.efi(8) gptboot.8.gz boot1.efi.8.gz
 groff_mdoc(7) sdoc.7.gz
 grzip(1) archive.3.gz libarchive.3.gz
 gsched(8) geom.8.gz
@@ -272,7 +272,6 @@ libtool(1) kadm5_pwcheck.3.gz
 libxo-csv(7) libxo.3.gz
 listen(3) rdma_connect.3.gz rdma_reject.3.gz rdma_accept.3.gz rdma_get_request.3.gz rdma_create_id.3.gz rdma_notify.3.gz rdma_get_cm_event.3.gz rdma_bind_addr.3.gz rdma_disconnect.3.gz rdma_create_ep.3.gz
 lli(1) binmiscctl.8.gz
-local_unbound(8) hier.7.gz
 lockf(2) pwdx.1.gz pargs.1.gz procstat.1.gz penv.1.gz
 log(4) watchdogd.8.gz
 lookup(9) lockmgr_disown.9.gz lockmgr_recursed.9.gz lockmgr_args_rw.9.gz lockmgr_args.9.gz lockmgr_rw.9.gz lockmgr_assert.9.gz lockmgr.9.gz lock.9.gz lockdestroy.9.gz lockinit.9.gz lockstatus.9.gz lockmgr_printinfo.9.gz
@@ -369,7 +368,7 @@ pdwait4(2) rights.4.gz capsicum.4.gz
 perl(1) makewhatis.8.gz
 pfil(4) inet.4.gz
 pic(1) man.1.gz
-pkg(8) beinstall.8.gz beinstall.sh.8.gz ports.7.gz pkg.7.gz hier.7.gz
+pkg(8) intro.1.gz introduction.1.gz beinstall.8.gz beinstall.sh.8.gz ports.7.gz pkg.7.gz hier.7.gz
 pkg-add(8) ports.7.gz
 pkg-audit(8) ports.7.gz
 pkg-autoremove(8) pkg.7.gz
