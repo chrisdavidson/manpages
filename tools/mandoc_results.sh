@@ -1,13 +1,13 @@
 #!/usr/local/bin/zsh
 
 MANDOC_STYLE="../output/mandoc/mandoc_style_errors.txt"
-MANDOC_LOCATION="~/src/manuals"
+MANDOC_LOCATION="/usr/share/man"
 
 echo "Deleting previously generated files..."
 rm ../output/mandoc/*.txt
 
 echo "Finding all the manual pages..."
-find "${MANDOC_LOCATION}" -name '*[1-9]' -type f | xargs mandoc -Tlint  > /home/chrisdavidson/manpages/output/mandoc/mandoc_style_errors.txt
+find "${MANDOC_LOCATION}" -type f -exec mandoc -Tlint {} \; > /home/chrisdavidson/manpages/output/mandoc/mandoc_style_errors.txt
 
 echo "Finding entires with more than 80 characters..."
 cat "${MANDOC_STYLE}" | grep "longer than 80" > ../output/mandoc/mandoc_80characters_error.txt
