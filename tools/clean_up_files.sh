@@ -22,6 +22,7 @@ MANDOC_FILE_LIST='mandoc_style_errors.txt
                   mandoc_newsentence_error.txt
                   mandoc_pargraph_error.txt
                   mandoc_fn_error.txt
+                  mandoc_tn_error.txt
                   mandoc_missingtitles_error.txt
                   mandoc_paragraph_error.txt
                   mandoc_tabs_error.txt
