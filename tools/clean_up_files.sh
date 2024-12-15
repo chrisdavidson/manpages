@@ -29,12 +29,5 @@ MANDOC_FILE_LIST='mandoc_style_errors.txt
                   mandoc_whitespace_error.txt'
 
 echo "Cleaning up the output..."
-for f in $FILE_LIST;  
-  do rm -Rf "${HOME}/${OUTPUT_DIR}/${f}" done
-done
-
-echo "Cleaning up the mandoc output.."
-for f in $MANDOC_FILE_LIST;
-  do rm -Rf "${HOME}/${MANDOC_OUTPUT_DIR}/${f}" done
-done
-
+find "${HOME}/${OUTPUT_DIR}" -type f -exec rm -rf {} \;
+find "${HOME}/${MANDOC_OUTPUT_DIR}" -type f -exec rm -rf {} \;
