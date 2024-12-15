@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/bin/sh
 
 MANDOC_STYLE="${HOME}/manpages/output/mandoc/mandoc_style_errors.txt"
 MANDOC_LOCATION="/usr/share/man"

@@ -1,4 +1,6 @@
-#!/usr/local/bin/zsh
+#!/bin/sh
+
+OUTPUT_DIR = "${HOME}/manpages/output"
 
 echo "cleaning up files.."
 sh clean_up_files.sh
@@ -9,8 +11,8 @@ sh check_pages.sh
 echo "processing results of manual pages.."
 perl parse_broken_refs.pl
 echo "post-processing output files..."
-cp /home/chrisdavidson/manpages/output/broken_refs.txt /home/chrisdavidson/manpages/output/broken_refs.txt.bac
-cat /home/chrisdavidson/manpages/output/broken_refs.txt.bac | tr -s '[:space:]' > /home/chrisdavidson/manpages/output/broken_refs.txt
+cp "${OUTPUT_DIR}"/broken_refs.txt "${OUTPUT_DIR}"/broken_refs.txt.bac
+cat "${OUTPUT_DIR}"/broken_refs.txt.bac | tr -s '[:space:]' > "${OUTPUT_DIR}"/broken_refs.txt
 echo "combine results..."
 perl combine_outputs.pl
 echo "working through whatis ..."
