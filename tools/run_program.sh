@@ -1,6 +1,6 @@
 #!/bin/sh
 
-OUTPUT_DIR = "${HOME}/manpages/output"
+OUTPUT_DIR="${HOME}/manpages/output"
 
 echo "cleaning up files.."
 sh clean_up_files.sh

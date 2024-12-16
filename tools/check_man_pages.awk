@@ -27,11 +27,13 @@ function addref(fname, page, section) {
    
     #check to see if the page variable is set
     if (!page) return
+    #Recursive execution to cycle through the file
     k = mp(page, sec)
    
     if (k in existing) return
     fk = fn ":" k
-    
+   
+    #we skip over any entry that has already been captured
     if (fk in seen_in_file) return
    
     #adding to the master list for consideration
