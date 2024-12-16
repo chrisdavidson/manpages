@@ -21,11 +21,12 @@ use File::HomeDir;
 
 #main set of files, these are first pass creation
 my $base_file = File::HomeDir::home() . "/manpages/output/broken_base.txt";
-my $ref_file = File::HomeDir::home() . "/manpages/input/broken_refs.txt";
+my $ref_file = File::HomeDir::home() . "/manpages/output/broken_refs.txt";
 my $contrib_file = File::HomeDir::home() . "/manpages/output/broken_contrib.txt";
 my $error_file = File::HomeDir::home() . "/manpages/output/broken_error_file.txt";
 
-my $directory = File::HomeDir::home() . "/src/manuals";
+#my $directory = File::HomeDir::home() . "/src/manuals";
+my $directory = File::HomeDir::home() . "/freebsd-src/src";
 my %manpages;
 
 #we are going to find all the files we care about for this processing

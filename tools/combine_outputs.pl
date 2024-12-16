@@ -90,8 +90,7 @@ sub combine_refs_contrib() {
 #the list of all entries in a hash map
 sub findword() {
   my $word = shift;
-  my $fhl = shift;
-  open(my $fh, '<', $fhl) or die $!;
+  open(my $fh, '<', $broken_contrib_file) or die $!;
 
   my @results;
 
