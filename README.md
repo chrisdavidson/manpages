@@ -30,3 +30,25 @@ There may be valid or invalid reasons for these entries and as such captured
 due to being identified in mandoc(1). It is important to *not* ignore these
 but to determine if this is valid for the time they were created.
 
+# Execution path for utilities
+The main driver of this whole process is the: run_program.sh and should be
+executed to be able to receive outoutput. 
+
+```
+    cd tools/
+    sh run_program.sh
+```
+
+# Utitilies executed
+Here is an inventory of the utilities and their purpose:
+    1. clean_up_files.sh - Will clear out previous executions of the script
+    2. mandoc_results.sh - Execute mandoc(1) checks
+    3. check_pages.sh - Wrapper to parse man(1) pages
+    4. parse_broken_refs.pl - Analysis and parse awk output from previous step
+    5. combine_outputs.pl - An attempt to consolidate outputs
+    6. check_whatis.pl - Execuate apropos(1) against potential issue manuals
+
+
+
+
+
