@@ -21,7 +21,10 @@ that are developed to be able to determine a potential course of action.
 5. Syntax error on end of sentence and no new line.
 6. Tab escape sequences identified 
 7. Useless macro .Tn
-8. Whitespaces at end of line
+8. Useless macro .Ud
+9. Invalid paragraph macro PP after SS 
+10. Whitespaces at end of line
+11. Check for no authors 
 
 # Background on anomaly detection
 
