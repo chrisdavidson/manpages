@@ -37,6 +37,8 @@ sub iterate_error_file() {
   close($fh);
 }
 
+#Take the individual whatis results and write to a file
+#Format the file to be able to do <manual page> : <results>
 sub capture_results() {
   my $manual_page = shift;
   my $entry = shift;
@@ -46,6 +48,8 @@ sub capture_results() {
   close($fh);
 }
 
+#Clean out the empty lines that are a side effect of the execution
+#TODO: To figure out how to prevent the extra lines in the first place
 sub strip_emptylines() {
   open(my $fh, '<', $whatis_file) or die $!;
   
@@ -55,6 +59,8 @@ sub strip_emptylines() {
   close($fh);
 }
 
+#The code iterates over the same file over and over again to find
+#the entries, this will go through and remove duplicate lines
 sub dedup_whatis_results() {
   my %seen = ();
 
