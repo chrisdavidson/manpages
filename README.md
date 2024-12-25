@@ -14,16 +14,17 @@ These patterns are based off analaysis of the outputs and subsequent tools
 that are developed to be able to determine a potential course of action.
 
 # List of mandoc(1) syntax issues checked for:
-    1. Lines that exceed 80 characters
-    2. Escape sequences that are invalid
-    3. Trailing blank references before .Fn
-    4. Missing manual title identifiers
-    5. Syntax error on end of sentence and no new line.
-    6. Tab escape sequences identified 
-    7. Useless macro .Tn
-    8. Whitespaces at end of line
+1. Lines that exceed 80 characters
+2. Escape sequences that are invalid
+3. Trailing blank references before .Fn
+4. Missing manual title identifiers
+5. Syntax error on end of sentence and no new line.
+6. Tab escape sequences identified 
+7. Useless macro .Tn
+8. Whitespaces at end of line
 
 # Background on anomaly detection
+
 The manual pages are an evolution over many decades and changes to formatting
 and style. The conventions listed above are a result of this evolution.
 There may be valid or invalid reasons for these entries and as such captured 
@@ -40,15 +41,11 @@ executed to be able to receive outoutput.
 ```
 
 # Utitilies executed
+
 Here is an inventory of the utilities and their purpose:
-    1. clean_up_files.sh - Will clear out previous executions of the script
-    2. mandoc_results.sh - Execute mandoc(1) checks
-    3. check_pages.sh - Wrapper to parse man(1) pages
-    4. parse_broken_refs.pl - Analysis and parse awk output from previous step
-    5. combine_outputs.pl - An attempt to consolidate outputs
-    6. check_whatis.pl - Execuate apropos(1) against potential issue manuals
-
-
-
-
-
+1. clean_up_files.sh - Will clear out previous executions of the script
+2. mandoc_results.sh - Execute mandoc(1) checks
+3. check_pages.sh - Wrapper to parse man(1) pages
+4. parse_broken_refs.pl - Analysis and parse awk output from previous step
+5. combine_outputs.pl - An attempt to consolidate outputs
+6. check_whatis.pl - Execuate apropos(1) against potential issue manuals
