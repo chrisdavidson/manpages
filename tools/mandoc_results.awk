@@ -18,12 +18,15 @@ output_80chars = "../output/mandoc/style_80chars.txt"
 output_fn = "../output/mandoc/style_fn.txt"
 output_tn = "../output/mandoc/style_tn.txt"
 output_ud = "../output/mandoc/style_ud.txt"
+output_sp = "../output/mandoc/style_sp.txt"
 output_cross = "../output/mandoc/warning_cross_reference.txt"
 output_section_order = "../output/mandoc/warning_section_order.txt"
 output_macro_fx = "../output/mandoc/style_macro_fx.txt"
 output_miss_arg = "../output/mandoc/style_miss_args.txt"
 output_new_sentence = "../output/mandoc/style_new_sentence.txt"
 output_blank_line = "../output/mandoc/warning_blank_line.txt"
+output_no_manual = "../output/mandoc/style_no_manual.txt"
+output_trailing_del = "../output/mandoc/style_trailing_del.txt"
 
 {
   if ($0 ~ /STYLE/) {
@@ -32,6 +35,9 @@ output_blank_line = "../output/mandoc/warning_blank_line.txt"
     else if ($0 ~ /Tn/) { print > output_tn; next; }
     else if ($0 ~ /Fx/) { print > output_macro_fx; next; }
     else if ($0 ~ /Ud/) { print > output_ud; next; }
+    else if ($0 ~ /blank line in fill mode/) {print > output_sp, next; }
+    else if ($0 ~ /referenced manual not found/) {print > output_no_manual; next; }
+    else if ($0 ~ /trailing delimiter/) {print > output_trailing_del; next; }
   } else if ($0 ~ /WARNING/) {
     if ($0 ~ /cross reference/) { print > output_cross; next; }
     else if ($0 ~ /sections out of/) { print > output_section_order; next; }
