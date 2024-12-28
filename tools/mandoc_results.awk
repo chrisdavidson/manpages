@@ -1,7 +1,7 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 # 
-#  Copyright 2024 Christopher Davidson
+#  Copyright 2020 Christopher Davidson
 # 
 #  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 #
@@ -14,34 +14,26 @@
 #
 #!/usr/bin/awk -f
 
-output_80chars = "../output/mandoc/style_80chars.txt"
-output_fn = "../output/mandoc/style_fn.txt"
-output_tn = "../output/mandoc/style_tn.txt"
-output_ud = "../output/mandoc/style_ud.txt"
-output_sp = "../output/mandoc/style_sp.txt"
-output_cross = "../output/mandoc/warning_cross_reference.txt"
-output_section_order = "../output/mandoc/warning_section_order.txt"
-output_macro_fx = "../output/mandoc/style_macro_fx.txt"
-output_miss_arg = "../output/mandoc/style_miss_args.txt"
-output_new_sentence = "../output/mandoc/style_new_sentence.txt"
-output_blank_line = "../output/mandoc/warning_blank_line.txt"
-output_no_manual = "../output/mandoc/style_no_manual.txt"
-output_trailing_del = "../output/mandoc/style_trailing_del.txt"
+output_style = "../output/style_errors.txt"
+output_warnings = "../output/warning_errors.txt"
+
+BEGIN {
+  FS = ":"
+}
 
 {
-  if ($0 ~ /STYLE/) {
-    if ($0 ~ /longer than 80/) { print > output_80chars; next; }
-    else if ($0 ~ /Fn/) { print > output_fn; next; }
-    else if ($0 ~ /Tn/) { print > output_tn; next; }
-    else if ($0 ~ /Fx/) { print > output_macro_fx; next; }
-    else if ($0 ~ /Ud/) { print > output_ud; next; }
-    else if ($0 ~ /blank line in fill mode/) {print > output_sp, next; }
-    else if ($0 ~ /referenced manual not found/) {print > output_no_manual; next; }
-    else if ($0 ~ /trailing delimiter/) {print > output_trailing_del; next; }
-  } else if ($0 ~ /WARNING/) {
-    if ($0 ~ /cross reference/) { print > output_cross; next; }
-    else if ($0 ~ /sections out of/) { print > output_section_order; next; }
-    else if ($0 ~ /new sentence/) { print > output_new_sentence; next; }
-    else if ($0 ~ /blank line/) { print > output_blank_line; next; }
+  if ($0 ~ /STYLE/) { 
+    man = substr($5, length, 1)
+    print man
+    printf("%-s %-20s %-s %s\n", $5, $2, $3, $6) >> output_style; 
+  }
+  else if ($0 ~ /WARNING/) {
+    printf("%-s %s %s\n", $5, $2, $6) >> output_warnings; 
   }
 }
+
+END {
+  close(output_style)
+  close(output_warnings)
+}
+
